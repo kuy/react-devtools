@@ -16,6 +16,7 @@ module.exports = {
   entry: {
     target: './target.js',
     sink: './sink.js',
+    form: './form.js',
   },
   output: {
     path: __dirname + '/build',

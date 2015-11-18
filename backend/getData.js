@@ -40,7 +40,7 @@ function getData(element: Object): DataType {
     }
   } else if (element._renderedChildren) {
     children = childrenList(element._renderedChildren);
-  } else if (element._currentElement.props) {
+  } else if (element._currentElement && element._currentElement.props) {
     // This is a native node without rendered children -- meaning the children
     // prop is just a string.
     children = element._currentElement.props.children;
@@ -71,6 +71,11 @@ function getData(element: Object): DataType {
     } else {
       name = type.displayName || type.name || 'Unknown';
     }
+  }
+
+  if (typeof element === 'string') {
+    nodeType = 'Text';
+    text = element;
   }
 
   if (element._instance) {

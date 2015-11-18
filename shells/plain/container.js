@@ -22,7 +22,7 @@ var Panel = require('../../frontend/Panel');
 
 var target: Object = document.getElementById('target');
 
-var appSrc = target.getAttribute('data-app-src') || '../../test/example/build/target.js';
+var appSrc = target.getAttribute('data-app-src') || '../../test/example/build/form.js';
 var devtoolsSrc = target.getAttribute('data-devtools-src') || './build/backend.js';
 
 var win = target.contentWindow;
